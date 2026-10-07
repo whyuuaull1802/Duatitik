@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dua Titik | Mie Chili Oil</title>
+    <meta
+      name="description"
+      content="Mie Chili Oil Dua Titik — pedas, gurih, nendang. Sederhana mie-nya, nendang rasanya."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: '#F5EBDD',
+              offwhite: '#FFF9F2',
+              tomato: '#D94A3D',
+              chili: '#B52A2F',
+              deepred: '#721C24',
+              softbrown: '#8A6652',
+              charcoal: '#24201E',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      :root {
+        --cream: #f5ebdd;
+        --offwhite: #fff9f2;
+        --tomato: #d94a3d;
+        --chili: #b52a2f;
+        --deepred: #721c24;
+        --softbrown: #8a6652;
+        --charcoal: #24201e;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--cream);
+        color: var(--charcoal);
+      }
+
+      .font-heading {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+
+      .hero-bg {
+        background-image: linear-gradient(
+            to top,
+            rgba(36, 32, 30, 0.8),
+            rgba(36, 32, 30, 0.2),
+            rgba(0, 0, 0, 0.1)
+          ),
+          url('https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .floating-card {
+        box-shadow: 0 25px 80px rgba(36, 32, 30, 0.12);
+      }
+
+      .menu-photo {
+        background-image: url('https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .experience-photo {
+        background-image: url('https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=1000&q=80');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 2px;
+        background: var(--deepred);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.25s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link:focus::after,
+      .nav-link.active::after {
+        transform: scaleX(1);
+      }
+
+      .spice-pill {
+        transition: all 0.25s ease;
+      }
+
+      .spice-pill.active {
+        background: linear-gradient(135deg, var(--tomato), var(--chili), var(--deepred));
+        color: white;
+        border-color: transparent;
+        transform: translateY(-1px);
+      }
+
+      .scroll-bounce {
+        animation: bounce 1.6s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(6px);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .hero-copy {
+          padding-top: 5rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-cream text-charcoal font-sans antialiased">
+    <header class="fixed inset-x-0 top-0 z-50">
+      <div id="nav-wrap" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
+        <nav
+          class="backdrop-blur-md border border-charcoal/10 bg-cream/80 transition-all duration-300 rounded-full shadow-[0_8px_24px_rgba(36,32,30,0.06)]"
+        >
+          <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+            <a href="#home" class="flex items-center gap-3">
+              <span class="font-heading text-lg font-extrabold tracking-[0.18em] text-charcoal sm:text-xl">DUA TITIK</span>
+            </a>
+
+            <div class="hidden items-center gap-8 lg:flex">
+              <a href="#home" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80 hover:text-charcoal">HOME</a>
+              <a href="#about" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80 hover:text-charcoal">ABOUT</a>
+              <a href="#menu" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80 hover:text-charcoal">MENU</a>
+              <a href="#reviews" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80 hover:text-charcoal">REVIEWS</a>
+              <a href="#location" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80 hover:text-charcoal">LOCATION</a>
+              <a href="#order" class="inline-flex items-center rounded-full bg-deepred px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-deepred/20 transition hover:-translate-y-0.5 hover:bg-[#5d1720]">ORDER</a>
+            </div>
+
+            <button id="menu-toggle" class="inline-flex items-center justify-center rounded-full border border-charcoal/20 p-2 text-charcoal lg:hidden" aria-label="Toggle menu" aria-expanded="false">
+              <i data-lucide="menu" class="h-5 w-5"></i>
+            </button>
+          </div>
+
+          <div id="mobile-menu" class="hidden border-t border-charcoal/10 px-4 py-4 lg:hidden">
+            <div class="flex flex-col gap-4">
+              <a href="#home" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80">HOME</a>
+              <a href="#about" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80">ABOUT</a>
+              <a href="#menu" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80">MENU</a>
+              <a href="#reviews" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80">REVIEWS</a>
+              <a href="#location" class="nav-link text-sm font-semibold tracking-[0.14em] text-charcoal/80">LOCATION</a>
+              <a href="#order" class="inline-flex items-center justify-center rounded-full bg-deepred px-5 py-3 text-sm font-bold text-white">ORDER</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero-bg relative min-h-screen overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#24201E]/80 via-transparent to-black/30"></div>
+
+        <div class="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8">
+          <div class="hero-copy text-center text-white">
+            <p class="mb-4 font-heading text-sm font-bold uppercase tracking-[0.32em] text-[#F5EBDD]/90 sm:text-base">Mie Chili Oil Dua Titik</p>
+            <h1 class="font-heading text-5xl font-extrabold leading-[0.9] tracking-[-0.08em] text-white sm:text-6xl lg:text-8xl">
+              PEDAS.<br />
+              GURIH.<br />
+              NENDANG.
+            </h1>
+            <div class="mt-8 flex items-center justify-center gap-3">
+              <span class="h-px w-10 bg-[#F5EBDD]/80"></span>
+              <p class="font-heading text-base font-bold tracking-[0.14em] text-[#F5EBDD]">DUA TITIK</p>
+              <span class="h-px w-10 bg-[#F5EBDD]/80"></span>
+            </div>
+            <div class="mt-8 flex items-center justify-center gap-3 text-[#F5EBDD]/90">
+              <span class="font-heading text-sm font-bold uppercase tracking-[0.24em] text-[#F5EBDD]">SCROLL TO DISCOVER</span>
+              <span class="scroll-bounce inline-flex text-xl text-[#F5EBDD]">↓</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="bg-cream py-20 sm:py-24">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <div class="mb-6 inline-flex items-center justify-center rounded-full border border-charcoal/10 bg-[#FFF9F2] px-4 py-2 shadow-sm">
+              <span class="font-heading text-[0.65rem] font-extrabold uppercase tracking-[0.28em] text-softbrown">Dua Titik</span>
+            </div>
+            <h2 class="font-heading text-3xl font-extrabold tracking-[-0.06em] text-charcoal sm:text-4xl lg:text-5xl">
+              KENALAN SAMA DUA TITIK.
+            </h2>
+          </div>
+
+          <div class="mt-12 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+            <div class="space-y-6">
+              <p class="text-lg leading-8 text-charcoal/80">
+                Berawal dari rumah, Dua Titik hadir dari kecintaan sederhana pada mie yang pedas, gurih, dan bikin pengen balik lagi.
+              </p>
+              <p class="text-base leading-7 text-charcoal/70">
+                Dari dapur kecil hingga rasa yang terus dibangun dari hari ke hari, setiap mangkuk dibuat untuk memberi sensasi yang hangat, puas, dan terasa dekat seperti masakan rumah.
+              </p>
+            </div>
+
+            <div class="floating-card rounded-[2rem] border border-charcoal/10 bg-[#FFF9F2] p-6">
+              <p class="font-heading text-sm font-extrabold uppercase tracking-[0.22em] text-softbrown">Kenapa “Dua Titik”?</p>
+              <p class="mt-4 text-lg leading-8 text-charcoal">
+                Dua titik bukan sekadar nama. Ada cerita tentang keluarga, rumah, dan perjalanan yang terus dilanjutkan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="bg-offwhite py-20 sm:py-24">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div class="max-w-xl">
+              <p class="font-heading text-sm font-extrabold uppercase tracking-[0.28em] text-softbrown">Menu Favorite</p>
+              <h2 class="mt-4 font-heading text-3xl font-extrabold tracking-[-0.06em] text-charcoal sm:text-4xl lg:text-5xl">
+                INI DIA MIE-NYA.
+              </h2>
+            </div>
+          </div>
+
+          <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div class="menu-photo h-[420px] rounded-[2rem] border border-charcoal/10 shadow-[0_20px_60px_rgba(36,32,30,0.08)]"></div>
+
+            <div class="rounded-[2rem] bg-white p-6 shadow-[0_18px_48px_rgba(114,28,36,0.08)] sm:p-8">
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="font-heading text-2xl font-extrabold tracking-[-0.05em] text-charcoal sm:text-3xl">MIE CHILI OIL</h3>
+                <span class="rounded-full bg-[#F5EBDD] px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-deepred">All in</span>
+              </div>
+
+              <p class="mt-4 text-base leading-7 text-charcoal/75">
+                Mie kenyal dengan chili oil pedas-gurih, disajikan lengkap dengan:
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <span class="rounded-full border border-charcoal/20 bg-[#FFF9F2] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-charcoal/80">BAKSO</span>
+                <span class="rounded-full border border-charcoal/20 bg-[#FFF9F2] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-charcoal/80">PANGSIT GORENG</span>
+                <span class="rounded-full border border-charcoal/20 bg-[#FFF9F2] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-charcoal/80">DAUN BAWANG</span>
+                <span class="rounded-full border border-charcoal/20 bg-[#FFF9F2] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-charcoal/80">SELADA</span>
+              </div>
+
+              <div class="mt-8 flex items-center justify-between rounded-2xl bg-gradient-to-r from-[#F5EBDD] to-[#FFF9F2] p-4 sm:p-5">
+                <span class="font-heading text-xl font-extrabold tracking-[-0.04em] text-charcoal">ALL IN — Rp15.000</span>
+              </div>
+
+              <div class="mt-8">
+                <p class="mb-4 font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-softbrown">Pilih level pedas</p>
+                <div class="grid grid-cols-2 gap-3 sm:grid-cols-5">
+                  <button class="spice-pill active rounded-full border border-charcoal/20 bg-white px-3 py-2 text-sm font-bold text-charcoal">01 🌶️</button>
+                  <button class="spice-pill rounded-full border border-charcoal/20 bg-white px-3 py-2 text-sm font-bold text-charcoal">02 🌶️🌶️</button>
+                  <button class="spice-pill rounded-full border border-charcoal/20 bg-white px-3 py-2 text-sm font-bold text-charcoal">03 🌶️🌶️🌶️</button>
+                  <button class="spice-pill rounded-full border border-charcoal/20 bg-white px-3 py-2 text-sm font-bold text-charcoal">04 🌶️🌶️🌶️🌶️</button>
+                  <button class="spice-pill rounded-full border border-charcoal/20 bg-white px-3 py-2 text-sm font-bold text-charcoal">05 🌶️🌶️🌶️🌶️🌶️</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="bg-cream py-20 sm:py-24">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl text-center">
+            <p class="font-heading text-sm font-extrabold uppercase tracking-[0.28em] text-softbrown">Review</p>
+            <h2 class="mt-4 font-heading text-3xl font-extrabold tracking-[-0.06em] text-charcoal sm:text-4xl lg:text-5xl">KATA MEREKA</h2>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+            <article class="rounded-[2rem] border border-charcoal/10 bg-[#FFF9F2] p-6 shadow-[0_14px_42px_rgba(36,32,30,0.05)]">
+              <div class="mb-5 text-3xl text-tomato">“</div>
+              <p class="text-base leading-7 text-charcoal/80">
+                Bumbunya berani banget, chili oil-nya wangi gurih gak cuma pedas doang. Fix bakal langganan!
+              </p>
+              <div class="mt-6 border-t border-charcoal/10 pt-4">
+                <p class="font-heading text-sm font-bold uppercase tracking-[0.16em] text-charcoal">@aulia.nd</p>
+              </div>
+            </article>
+
+            <article class="rounded-[2rem] border border-charcoal/10 bg-[#FFF9F2] p-6 shadow-[0_14px_42px_rgba(36,32,30,0.05)]">
+              <div class="mb-5 text-3xl text-tomato">“</div>
+              <p class="text-base leading-7 text-charcoal/80">
+                Pangsit gorengnya renyah, bakso kenyal, mie-nya pas tingkat kematangannya. 15rb worth it parah.
+              </p>
+              <div class="mt-6 border-t border-charcoal/10 pt-4">
+                <p class="font-heading text-sm font-bold uppercase tracking-[0.16em] text-charcoal">Dimas R.</p>
+              </div>
+            </article>
+
+            <article class="rounded-[2rem] border border-charcoal/10 bg-[#FFF9F2] p-6 shadow-[0_14px_42px_rgba(36,32,30,0.05)]">
+              <div class="mb-5 text-3xl text-tomato">“</div>
+              <p class="text-base leading-7 text-charcoal/80">
+                Pre-order buat Jumat selalu ditunggu-tunggu kantor. Bikin nagih!
+              </p>
+              <div class="mt-6 border-t border-charcoal/10 pt-4">
+                <p class="font-heading text-sm font-bold uppercase tracking-[0.16em] text-charcoal">Maya S.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-gradient-to-r from-[#D94A3D] via-[#B52A2F] to-[#721C24] py-20 sm:py-24">
+        <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <p class="font-heading text-xl font-extrabold uppercase tracking-[0.12em] text-[#F5EBDD] sm:text-2xl">
+            SEDERHANA MIE-NYA,<br />
+            NENDANG RASANYA.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-offwhite py-20 sm:py-24">
+        <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
+          <div class="experience-photo h-[420px] rounded-[2rem] border border-charcoal/10 shadow-[0_20px_60px_rgba(36,32,30,0.08)]"></div>
+
+          <div>
+            <span class="inline-flex rounded-full border border-deepred/20 bg-[#F5EBDD] px-4 py-2 text-[0.62rem] font-extrabold uppercase tracking-[0.24em] text-deepred">FROM OUR KITCHEN TO YOUR TABLE.</span>
+            <h2 class="mt-6 font-heading text-3xl font-extrabold tracking-[-0.06em] text-charcoal sm:text-4xl lg:text-5xl">
+              Sederhana mie-nya, nendang rasanya.
+            </h2>
+            <p class="mt-5 max-w-xl text-lg leading-8 text-charcoal/75">
+              Disiapkan dengan hati, gurih yang pas, pedas yang terasa, dan rasa yang bikin balik lagi tanpa alasan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="location" class="bg-cream py-20 sm:py-24">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-10 text-center">
+            <p class="font-heading text-sm font-extrabold uppercase tracking-[0.28em] text-softbrown">Find us</p>
+            <h2 class="mt-4 font-heading text-3xl font-extrabold tracking-[-0.06em] text-charcoal sm:text-4xl lg:text-5xl">FIND US.</h2>
+          </div>
+
+          <div class="rounded-[2rem] border border-charcoal/10 bg-[#FFF9F2] p-6 shadow-[0_18px_48px_rgba(36,32,30,0.06)] sm:p-8 lg:p-10">
+            <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+              <div class="space-y-5">
+                <span class="inline-flex rounded-full bg-[#F5EBDD] px-4 py-2 text-[0.62rem] font-extrabold uppercase tracking-[0.24em] text-deepred">AVAILABLE FOR PICKUP</span>
+                <div class="max-w-2xl space-y-3">
+                  <p class="text-lg leading-8 text-charcoal/80">
+                    Perumahan Bumi Rahayu 5<br />
+                    Jl. Raya Narogong, RT.002/RW.008, Bantargebang, Kec. Bantar Gebang, Kota Bekasi, Jawa Barat 17152
+                  </p>
+                  <p class="font-heading text-base font-bold uppercase tracking-[0.12em] text-deepred">READY FOR PICKUP: Jumat · 16.00–21.00 WIB</p>
+                </div>
+              </div>
+
+              <a
+                href="https://maps.google.com/?q=Perumahan+Bumi+Rahayu+5+Jl.+Raya+Narogong+Bekasi"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#D94A3D] via-[#B52A2F] to-[#721C24] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.18em] text-white transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-deepred/15"
+              >
+                OPEN IN GOOGLE MAPS
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="order" class="bg-gradient-to-br from-[#721C24] via-[#B52A2F] to-[#D94A3D] py-20 text-[#F5EBDD] sm:py-24">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-4xl text-center">
+            <p class="font-heading text-sm font-extrabold uppercase tracking-[0.24em] text-[#F5EBDD]/80">Order</p>
+            <h2 class="mt-4 font-heading text-3xl font-extrabold tracking-[-0.06em] text-[#F5EBDD] sm:text-4xl lg:text-5xl">
+              SUDAH NGIDAM? YA UDAH, DUA TITIK. 🌶️
+            </h2>
+            <p class="mt-6 text-xl font-semibold text-[#F5EBDD]">Mie Chili Oil — Rp15.000</p>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+            <div class="rounded-[2rem] border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+              <p class="font-heading text-3xl font-extrabold text-[#F5EBDD]">01</p>
+              <h3 class="mt-4 font-heading text-xl font-bold uppercase tracking-[0.08em] text-[#F5EBDD]">PRE-ORDER</h3>
+              <p class="mt-3 text-base leading-7 text-[#F5EBDD]/85">Chat via WhatsApp (Senin–Kamis)</p>
+            </div>
+            <div class="rounded-[2rem] border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+              <p class="font-heading text-3xl font-extrabold text-[#F5EBDD]">02</p>
+              <h3 class="mt-4 font-heading text-xl font-bold uppercase tracking-[0.08em] text-[#F5EBDD]">READY</h3>
+              <p class="mt-3 text-base leading-7 text-[#F5EBDD]/85">Pesanan siap diambil (Jumat · 16.00–21.00 WIB)</p>
+            </div>
+            <div class="rounded-[2rem] border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+              <p class="font-heading text-3xl font-extrabold text-[#F5EBDD]">03</p>
+              <h3 class="mt-4 font-heading text-xl font-bold uppercase tracking-[0.08em] text-[#F5EBDD]">PICK UP / DELIVERY</h3>
+              <p class="mt-3 text-base leading-7 text-[#F5EBDD]/85">Bisa pickup langsung atau gunakan Gojek · Grab · Kurir lainnya (Ongkir ditanggung customer)</p>
+            </div>
+          </div>
+
+          <div class="mt-12 text-center">
+            <a
+              href="https://wa.me/6281936952244?text=Halo%20Dua%20Titik,%20saya%20mau%20order%20Mie%20Chili%20Oil"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-[#FFF9F2] px-8 py-4 text-base font-extrabold uppercase tracking-[0.2em] text-deepred transition hover:-translate-y-1 hover:scale-[1.01] hover:shadow-[0_20px_50px_rgba(255,249,242,0.2)]"
+            >
+              PESAN VIA WHATSAPP
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-offwhite py-20 sm:py-24">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <p class="font-heading text-sm font-extrabold uppercase tracking-[0.28em] text-softbrown">Connect</p>
+            <h2 class="mt-4 font-heading text-3xl font-extrabold tracking-[-0.06em] text-charcoal sm:text-4xl lg:text-5xl">
+              LET'S KEEP IN TOUCH.
+            </h2>
+          </div>
+
+          <div class="mt-12 grid gap-5 sm:grid-cols-3">
+            <a href="https://instagram.com/duatitik26" target="_blank" rel="noreferrer" class="rounded-[1.5rem] border border-charcoal/10 bg-white p-5 text-center shadow-[0_12px_30px_rgba(36,32,30,0.04)] transition hover:-translate-y-1">
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#F5EBDD] text-deepred">
+                <i data-lucide="instagram" class="h-5 w-5"></i>
+              </div>
+              <p class="mt-4 font-heading text-base font-bold uppercase tracking-[0.12em] text-charcoal">Instagram</p>
+              <p class="mt-2 text-sm text-charcoal/70">@duatitik26</p>
+            </a>
+
+            <a href="https://wa.me/6281936952244" target="_blank" rel="noreferrer" class="rounded-[1.5rem] border border-charcoal/10 bg-white p-5 text-center shadow-[0_12px_30px_rgba(36,32,30,0.04)] transition hover:-translate-y-1">
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#F5EBDD] text-deepred">
+                <i data-lucide="message-circle" class="h-5 w-5"></i>
+              </div>
+              <p class="mt-4 font-heading text-base font-bold uppercase tracking-[0.12em] text-charcoal">WhatsApp</p>
+              <p class="mt-2 text-sm text-charcoal/70">081936952244</p>
+            </a>
+
+            <a href="mailto:warungduatitik26@gmail.com" class="rounded-[1.5rem] border border-charcoal/10 bg-white p-5 text-center shadow-[0_12px_30px_rgba(36,32,30,0.04)] transition hover:-translate-y-1">
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#F5EBDD] text-deepred">
+                <i data-lucide="mail" class="h-5 w-5"></i>
+              </div>
+              <p class="mt-4 font-heading text-base font-bold uppercase tracking-[0.12em] text-charcoal">Email</p>
+              <p class="mt-2 text-sm text-charcoal/70">warungduatitik26@gmail.com</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-charcoal py-10 text-[#F5EBDD]">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-6 border-b border-white/10 pb-8 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="font-heading text-2xl font-extrabold tracking-[0.18em] text-[#F5EBDD]">DUA TITIK</p>
+            <p class="mt-2 text-sm text-[#F5EBDD]/75">Sederhana mie-nya, nendang rasanya.</p>
+          </div>
+
+          <div class="flex items-center gap-6 text-sm font-medium text-[#F5EBDD]/80">
+            <a href="https://instagram.com/duatitik26" target="_blank" rel="noreferrer" class="hover:text-white">Instagram</a>
+            <a href="https://wa.me/6281936952244" target="_blank" rel="noreferrer" class="hover:text-white">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center text-sm text-[#F5EBDD]/70 sm:text-left">
+          © <span id="year"></span> Dua Titik. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuToggle.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        menuToggle.setAttribute('aria-expanded', String(!isOpen));
+        menuToggle.innerHTML = isOpen
+          ? '<i data-lucide="menu" class="h-5 w-5"></i>'
+          : '<i data-lucide="x" class="h-5 w-5"></i>';
+        lucide.createIcons();
+      });
+
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = [...document.querySelectorAll('main section[id]')];
+
+      const updateActiveLink = () => {
+        let current = 'home';
+        const scrollY = window.scrollY + 140;
+
+        sections.forEach((section) => {
+          if (scrollY >= section.offsetTop) {
+            current = section.id;
+          }
+        });
+
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute('href') === `#${current}`;
+          link.classList.toggle('active', isActive);
+          link.style.color = isActive ? '#24201E' : '';
+        });
+      };
+
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink();
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      document.querySelectorAll('.spice-pill').forEach((button) => {
+        button.addEventListener('click', () => {
+          document.querySelectorAll('.spice-pill').forEach((item) => item.classList.remove('active'));
+          button.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
